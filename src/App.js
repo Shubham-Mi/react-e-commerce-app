@@ -14,20 +14,24 @@ function App() {
     cartItems: {},
     totalPrice: 0,
   });
-  const [showCart, setShowCart] = useState(false);
+
+  const openCart = () => {
+    const cart = document.querySelector(".cart");
+    cart.classList.add("is-open");
+  };
 
   return (
     <store.Provider value={state}>
       <div className="App">
         <header className="App-header">
           <Navbar items={navbar} />
-          <button className="button" onClick={() => setShowCart(!showCart)}>
+          <button className="button" onClick={() => openCart()}>
             Cart
           </button>
         </header>
         <main className="App-main">
           <CardGrid />
-          <Cart showCart={showCart} />
+          <Cart />
         </main>
       </div>
     </store.Provider>

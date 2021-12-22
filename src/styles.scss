@@ -17,7 +17,7 @@ code {
 $primary-color: rgb(187, 151, 151);
 $secondary-color: rgb(124, 95, 95);
 $button-background: rgb(59, 59, 70);
-$danger-color: #cc0000;
+$danger-color: #913333;
 
 html {
   box-sizing: border-box;
@@ -51,6 +51,7 @@ body {
 
   &.is-danger {
     background-color: $danger-color;
+    color: white;
 
     &:hover {
       background-color: darken($danger-color, 5);
@@ -144,29 +145,106 @@ body {
   align-items: center;
 }
 
+// .cart {
+//   background-color: #8d8181;
+//   position: absolute;
+//   top: 77px;
+//   right: 6px;
+//   width: 500px;
+//   display: flex;
+//   flex-direction: column;
+//   border-radius: 5px;
+//   overflow: auto;
+// }
+
+// .cart > .cart-title {
+//   flex: 1;
+//   display: flex;
+//   justify-content: center;
+// }
+
+// .empty-cart {
+//   flex: 1;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   font-size: 20px;
+//   color: white;
+// }
+
 .cart {
-  background-color: #8d8181;
-  position: absolute;
-  top: 77px;
-  right: 6px;
-  width: 500px;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 360px;
   display: flex;
   flex-direction: column;
-  border-radius: 5px;
-  overflow: auto;
+  transform: translateX(100%);
+  transition: 180ms;
+  background-color: rgb(89, 89, 145);
+  border-left: 1px solid #e2e2e2;
+
+  &.is-open {
+    transform: translateX(0);
+  }
 }
 
-.cart > .cart-title {
-  flex: 1;
+.cart-header {
+  flex: 0 0 auto;
   display: flex;
-  justify-content: center;
-}
-
-.empty-cart {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+  padding: 10px;
+  border-bottom: 1px solid #e2e2e2;
+  justify-content: space-between;
   align-items: center;
-  font-size: 20px;
-  color: white;
+}
+
+.cart-empty {
+  padding: 20px;
+  text-align: center;
+  flex: 1 0 0;
+}
+
+.cart-items {
+  flex: 1 0 0;
+  overflow-y: auto;
+}
+
+.cart-item {
+  margin: 5px;
+  padding: 10px;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #e2e2e2;
+  }
+}
+
+.cart-item-title {
+  font-size: 18pt;
+  color: black;
+  flex: 1 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 5px;
+}
+
+.cart-item-top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cart-item-total {
+  font-size: 13pt;
+  color: darkgray;
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+.cart-footer {
+  padding: 10px;
+  border-top: 1px solid #e2e2e2;
 }
