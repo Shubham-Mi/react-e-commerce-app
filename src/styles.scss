@@ -145,33 +145,6 @@ body {
   align-items: center;
 }
 
-// .cart {
-//   background-color: #8d8181;
-//   position: absolute;
-//   top: 77px;
-//   right: 6px;
-//   width: 500px;
-//   display: flex;
-//   flex-direction: column;
-//   border-radius: 5px;
-//   overflow: auto;
-// }
-
-// .cart > .cart-title {
-//   flex: 1;
-//   display: flex;
-//   justify-content: center;
-// }
-
-// .empty-cart {
-//   flex: 1;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   font-size: 20px;
-//   color: white;
-// }
-
 .cart {
   position: fixed;
   z-index: 2;
